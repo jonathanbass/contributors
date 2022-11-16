@@ -1,8 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "e5BqNuceYrdjl6FtLfCE5pzVc0NiGokFGSEymFGMHwHX3V6cjtVAYV0KcFHBVDIAB0k2PWncqtOfP4xxXK79DQ==",
+  "dgSpecHash": "AVm7zKHOfTRTErrMr0/twlJxVjMRjp0IBaPn50P+cQYtFUsDbr+efcJoe9jpifCts29eReAqMY/x4b0EtEm5Xw==",
   "success": true,
   "projectFilePath": "C:\\Dev\\contributors\\Contributers.API\\Contributers.API\\Contributers.API.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\jcb\\.nuget\\packages\\mediatr\\11.0.0\\mediatr.11.0.0.nupkg.sha512",
+    "C:\\Users\\jcb\\.nuget\\packages\\mediatr.contracts\\1.0.1\\mediatr.contracts.1.0.1.nupkg.sha512",
+    "C:\\Users\\jcb\\.nuget\\packages\\mediatr.extensions.microsoft.dependencyinjection\\11.0.0\\mediatr.extensions.microsoft.dependencyinjection.11.0.0.nupkg.sha512",
+    "C:\\Users\\jcb\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\6.0.0\\microsoft.extensions.dependencyinjection.abstractions.6.0.0.nupkg.sha512",
+    "C:\\Users\\jcb\\.nuget\\packages\\octokit\\4.0.1\\octokit.4.0.1.nupkg.sha512"
+  ],
   "logs": []
 }
