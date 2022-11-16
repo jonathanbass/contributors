@@ -1,5 +1,4 @@
 ﻿using Contributers.API.Responses;
-using Microsoft.Extensions.Options;
 using Octokit;
 
 namespace Contributers.API
@@ -8,11 +7,8 @@ namespace Contributers.API
     {
         private readonly IGitHubClient _gitHubClient;
 
-        public GitHubService(IOptions<GitHubCredentials> gitHubCredentials)
+        public GitHubService(IGitHubClient gitHubClient)
         {
-            var gitHubClient = new GitHubClient(new ProductHeaderValue("GitHubClient"));
-            var basicAuth = new Credentials(gitHubCredentials.Value.Username, gitHubCredentials.Value.Password);
-            gitHubClient.Credentials = basicAuth;
             _gitHubClient = gitHubClient;
         }
 
