@@ -15,14 +15,8 @@ namespace Contributers.API.Controllers
             _sender = sender;
         }
 
-        [HttpGet]
-        public ActionResult GetProductById()
-        {
-            return Ok("Hello world");
-        }
-
-        [HttpGet("{username}/{repository}", Name = "GetContributers")]
-        public async Task<ActionResult> GetProductById(string username, string repository)
+        [HttpGet("{username}/{repository}")]
+        public async Task<ActionResult> GetContributers(string username, string repository)
         {
             var contributers = await _sender.Send(new GetContributersQuery(username, repository));
             return Ok(contributers);

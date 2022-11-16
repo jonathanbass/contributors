@@ -14,8 +14,7 @@ namespace Contributers.API
 
         public async Task<ContributersResponse> GetContributers(string username, string repository)
         {
-            var repo = await _gitHubClient.Repository.Get(username, repository);
-            var commits = await _gitHubClient.Repository.Commit.GetAll(repo.Id, new ApiOptions { PageCount = 1, PageSize = 30 });
+            var commits = await _gitHubClient.Repository.Commit.GetAll(username, repository, new ApiOptions { PageCount = 1, PageSize = 30 });
 
             return new ContributersResponse { Contributers = commits.Select(c => c.Commit.Author) };
         }
