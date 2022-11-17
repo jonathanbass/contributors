@@ -14,6 +14,17 @@ builder.Services.AddMediatR(typeof(Program));
 
 builder.Services.AddControllers();
 
+const string AllowLocalHost = "_allowLocalHost";
+
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy(AllowLocalHost,
+        policy =>
+        {
+            policy.WithOrigins("http://localhost:3000");
+        });
+});
+
 var gitHubClient = new GitHubClient(new ProductHeaderValue("GitHubClient"));
 
 var username = builder.Configuration["GitHubCredentials:Username"];
@@ -34,5 +45,7 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 
 app.MapControllers();
+
+app.UseCors(AllowLocalHost);
 
 app.Run();

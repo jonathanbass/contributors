@@ -1,5 +1,4 @@
-﻿using Contributers.API.Responses;
-using Octokit;
+﻿using Octokit;
 
 namespace Contributers.API
 {
@@ -12,11 +11,11 @@ namespace Contributers.API
             _gitHubClient = gitHubClient;
         }
 
-        public async Task<ContributersResponse> GetContributers(string username, string repository)
+        public async Task<IEnumerable<Committer>> GetContributers(string username, string repository)
         {
             var commits = await _gitHubClient.Repository.Commit.GetAll(username, repository, new ApiOptions { PageCount = 1, PageSize = 30 });
 
-            return new ContributersResponse { Contributers = commits.Select(c => c.Commit.Author) };
+            return commits.Select(c => c.Commit.Author);
         }
     }
 }

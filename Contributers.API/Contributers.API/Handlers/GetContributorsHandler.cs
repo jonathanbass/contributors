@@ -15,8 +15,7 @@ namespace Contributers.API.Handlers
 
         public async Task<IEnumerable<Committer>> Handle(GetContributersQuery request, CancellationToken cancellationToken)
         {
-            var response = await _gitHubService.GetContributers(request.username, request.repository);
-            return response.Contributers;
+            return await _gitHubService.GetContributers(request.username, request.repository);
         }
     }
 }

@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace Contributers.API.Controllers
 {
     [ApiController]
-    [Route("api/v1/[controller]")]
+    [Route("api/v1/")]
     public class ContributersController : ControllerBase
     {
         private readonly ISender _sender;
@@ -15,11 +15,11 @@ namespace Contributers.API.Controllers
             _sender = sender;
         }
 
-        [HttpGet("{username}/{repository}")]
+        [HttpGet("{username}/{repository}/[controller]")]
         public async Task<ActionResult> GetContributers(string username, string repository)
         {
             var contributers = await _sender.Send(new GetContributersQuery(username, repository));
-            return Ok(contributers);
+            return Ok(new { Contributers = contributers });
         }
     }
 }
