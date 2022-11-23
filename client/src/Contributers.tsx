@@ -29,7 +29,7 @@ function Contributers() {
     return <Container>
         <Grid container marginTop={0} spacing={3}>
             {contributers.map(contributer => (
-                <Contributer name={contributer.name} email={contributer.email} date={contributer.date} />
+                <Contributer key={contributer.date} name={contributer.name} email={contributer.email} date={contributer.date} />
             ))}
         </Grid>
     </Container>;
